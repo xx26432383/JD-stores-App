@@ -20,10 +20,11 @@
               <div class="date">{{item.judgeTime}}</div>
             </div>
 
-            <div
+            <!-- <div
               class="star"
               :style="{backgroundPosition: `${90 - item.judgeLevel*18}px 0`}">
-            </div>
+            </div> -->
+            <el-rate v-model="item.judgeLevel" disabled></el-rate>
           </div>
           <div class="msg">{{item.judgeContent}}</div>
           <!-- <img :src="item.imagePath" alt=""> -->

@@ -10,8 +10,8 @@
       <div class="book-Describe">商品介绍：{{commDetailData.goodsNotes}}</div>
       <div class="comm-evaluate">
         商品评分:
-        <el-rate v-model="commDetailData.judgeGoodsLevel" disabled></el-rate>
-        <span>{{commDetailData.judgeGoodsLevel}}</span>
+        <el-rate v-model="commDetailData.goodsLevel" disabled></el-rate>
+        <span>{{commDetailData.goodsLevel}}</span>
         分
       </div>
       <div class="count-box">

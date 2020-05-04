@@ -6,7 +6,7 @@
           <span>{{item.goodsName}}</span>
 
         <!-- <div class="star" :style="{backgroundPosition: `${180 - 5 * 36}px 0`}">{{item.goodsLevel}}</div> -->
-        <el-rate  v-model="item.goodsLevel" disabled></el-rate>
+        <el-rate  v-model="item.goodsLevel" allow-half></el-rate>
       </div>
 
       <div class="eva-box">
@@ -42,7 +42,8 @@ export default {
   name: 'order-evaluate',
   data () {
     return {
-      judgeMgeLists: []
+      judgeMgeLists: [],
+      goodsLevel: {}
     }
   },
   mounted () {
@@ -52,7 +53,7 @@ export default {
     getEvaluate () {
       req('getEvaluate', {orderCode: this.$route.query.orderCode, userId: JSON.parse(sessionStorage.getItem('roleInfo')).userId}).then(data => {
         console.log(data)
-        this.judgeMgeLists = data.data[0].orderNotesList
+        this.judgeMgeLists = data.data
       })
     },
     addEvaluate () {
@@ -63,7 +64,7 @@ export default {
           orderCode: this.$route.query.orderCode,
           userId: JSON.parse(sessionStorage.getItem('roleInfo')).userId,
           judgeMgeLists: this.judgeMgeLists.map(item => {
-            return Object.assign({}, {goodsCode: item.goodsCode, judgeContent: item.judgeContent, judgeLevel: item.goodsLevel})
+            return Object.assign({}, {goodsCode: item.goodsCode, judgeContent: item.judgeContent, judgeLevel: item.goodsLevel}) // judgeLevel: item.goodsLevel
           })
         }),
         headers: {

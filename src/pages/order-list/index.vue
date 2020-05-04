@@ -9,7 +9,7 @@
         </ul>
     </div>
     <!-- 普通客户 -->
-    <div class="order-item" v-for="item of list" :key="item.id" @click="toPage(item)" v-show="userType === 4">
+    <div class="order-item" v-for="item of list" :key="item.id" @click="toPage(item)" v-show="userType === 4 || userType === 2">
         <div class="item-top">
             <img src="../../assets/我的订单.png" alt="">
             <span>{{item.orderCode}}</span>

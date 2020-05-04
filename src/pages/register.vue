@@ -37,8 +37,11 @@
       <el-form-item label="用户邮箱" prop="email">
         <el-input v-model="formData.email"></el-input>
       </el-form-item>
-      <el-form-item label="门店邀请码" prop="inviteCode">
+      <el-form-item label="门店邀请码" prop="inviteCode" label-width="82px">
         <el-input v-model="formData.inviteCode"></el-input>
+      </el-form-item>
+      <el-form-item label="头像" prop="image">
+        <i-file v-model="formData.image"></i-file>
       </el-form-item>
       <el-form-item>
         <el-button class="register-btn" type="primary" @click="submit">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</el-button>
@@ -52,10 +55,14 @@
 
 <script>
 import axios from 'axios'
+import IFile from '@/components/common/i-file.vue'
 const qs = require('qs')
 
 export default {
   name: 'register',
+  components: {
+    IFile
+  },
   data () {
     return {
       formData: {},

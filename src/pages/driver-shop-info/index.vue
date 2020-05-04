@@ -6,7 +6,7 @@
         <span>{{item.storesCode}}</span>
       </div>
       <div>
-        门店：{{item.storeName}}
+        门店：{{item.storesName}}
       </div>
       <div>
         地址：{{item.storesAddress}}
