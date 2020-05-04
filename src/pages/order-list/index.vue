@@ -6,6 +6,7 @@
             <li :class="{active: this.orderType === 'payed'}" @click="getOrderList(1, 'payed')">已付款</li>
             <li :class="{active: this.orderType === 'pickup'}" @click="getOrderList(2, 'pickup')">待取货</li>
             <li :class="{active: this.orderType === 'confirm'}" @click="getOrderList(4, 'confirm')">已完成</li>
+            <li :class="{active: this.orderType === 'cancel'}" @click="getOrderList(5, 'cancel')">已取消</li>
         </ul>
     </div>
     <!-- 普通客户 -->
@@ -45,9 +46,9 @@
         </div>
         <div class="shop-user-info" v-show="userType === 2">
             <img src="../../assets/u1056.png" alt="">
-            张三
+            {{item.clientUserName}}
             <img src="../../assets/u1060.png" alt="">
-            13511111111
+            {{item.clientUserPhone}}
         </div>
         <div class="item-bottom">
             <span>共{{item.amount}}件商品，合计￥</span>
@@ -297,6 +298,7 @@ export default {
       .item-more {
           width: 100%;
           display: flex;
+          margin-bottom: 50px;
           .btn {
               width: 92px;
               height: 28px;
@@ -321,6 +323,9 @@ export default {
                   color: rgb(195,152,98);
               }
           }
+      }
+      .item-more:last-child {
+        margin-bottom: 50px;
       }
   }
 </style>

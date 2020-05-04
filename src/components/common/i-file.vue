@@ -55,7 +55,7 @@ export default {
         let form = new FormData()
         let imgFile = document.getElementById('file').files[0]
         form.append('file', imgFile, imgFile.name) // 通过append向form对象添加数据
-        form.append('access_token', JSON.parse(sessionStorage.getItem('userInfo')).access_token) // 通过append向form对象添加数据
+        // form.append('access_token', JSON.parse(sessionStorage.getItem('userInfo')).access_token) // 通过append向form对象添加数据
 
         axios({
           method: 'post',
