@@ -131,6 +131,7 @@ export default {
   margin-top: 10px;
 
   li {
+    height: 275px;
     position: relative;
     width: 48%;
     background: #fff;
@@ -141,6 +142,7 @@ export default {
 
     img {
       width: 100%;
+      height: 180px;
     }
 
     div:nth-child(2) {

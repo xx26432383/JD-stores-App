@@ -192,7 +192,7 @@ export default {
   .book-classify-conteiner {
     position: absolute;
     top: 0;
-    left: 22%;
+    left: 25%;
     bottom: 0;
     overflow: auto;
     width: 78%;
@@ -224,6 +224,7 @@ export default {
 
           img {
             width: 70%;
+            height: 113px;
           }
 
           div:nth-child(2) {
