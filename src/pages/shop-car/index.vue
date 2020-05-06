@@ -44,7 +44,7 @@
           <span>{{totalPrice.toFixed(2)}}</span>
         </div>
 
-        <button @click="addShopCar">结算</button>
+        <button @click="">结算</button>
         <button @click="deleteShopCar">删除</button>
       </div>
     </div>
@@ -121,7 +121,7 @@ export default {
   },
   methods: {
     getShopCarList () {
-      req('getShopData', {pageSize: 100, pageNum: 1}).then(data => {
+      req('getShopData', {pageSize: 100, pageNum: 1, userId: JSON.parse(sessionStorage.getItem('roleInfo')).userId}).then(data => {
         console.log(data)
         this.list = data.data.list.map(item => {
           return Object.assign({}, item, {checked: false})
