@@ -44,7 +44,7 @@
           <span>{{totalPrice.toFixed(2)}}</span>
         </div>
 
-        <button @click="">结算</button>
+        <button @click="addShopCar">结算</button>
         <button @click="deleteShopCar">删除</button>
       </div>
     </div>
