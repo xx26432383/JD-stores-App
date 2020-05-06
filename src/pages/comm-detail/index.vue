@@ -81,7 +81,7 @@ export default {
       }).then(data => {
         console.log(data)
         this.commDetailData = Object.assign({}, data.data, {
-          judgeGoodsLevel: Number(data.data.judgeGoodsLevel)
+          // judgeGoodsLevel: Number(data.data.judgeGoodsLevel)
         })
       })
     },
@@ -110,7 +110,7 @@ export default {
       })
     },
     addShopCar () {
-      req('addShopCar', {goodsCode: this.commDetailData.goodsCode, carGoodsCount: this.bookCount}).then(data => {
+      req('addShopCar', {goodsCode: this.commDetailData.goodsCode, carGoodsCount: this.bookCount, userId: JSON.parse(sessionStorage.getItem('roleInfo')).userId}).then(data => {
         console.log(data)
         if (data.code === 0) {
           this.$message.success(data.msg)
